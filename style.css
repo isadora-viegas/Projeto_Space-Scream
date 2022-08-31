@@ -1,0 +1,187 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Staatliches', cursive;
+  background: #dee1f3;
+}
+
+main {
+  margin: auto;
+}
+
+.grid {
+  min-width: 100%;
+  max-width: 32rem;
+  display: grid;
+}
+
+header {
+  height: 30rem;
+  margin-bottom: 3rem;
+  text-align: center;
+  animation: begin 3s;
+  min-width: 100%;
+  background: #8E9AAF;
+}
+
+header img {
+  margin: 1.5rem 0 1.5rem;
+}
+
+header img:hover {
+  animation: giro 1s;
+}
+ 
+h1 {
+  font-size: 5rem;
+  line-height: 3.4rem;
+  letter-spacing: 0.5rem;
+  text-align: center;
+  width: 100%;
+  height: 6rem;
+  padding: 1.5rem 0;
+  background: #CBC0D3;
+  color: white;
+}
+
+p {
+  font-family: 'Palanquin', sans-serif;
+  min-width: 100%;
+  max-width: 38.4rem;
+  font-size: 3rem;
+  line-height: 3.5rem;
+  text-align: center;
+  margin: 1.4rem auto 6.3rem;
+  padding: 1.6rem;
+}
+
+.img-icecream {
+  position: relative;
+  margin-bottom: 3.2rem;
+  padding: 0 3rem;
+}
+
+.img-icecream img {
+  min-width: 100%;
+  max-width: 32rem;
+  height: auto;
+  border-radius: 3rem;
+  object-fit: cover;
+}
+
+.img-icecream img:hover {
+  transform: scale(1.1);
+  filter: blur(0.25rem);
+}
+
+.img-icecream span {
+  background: #FEEAFA;
+  color: #4A4E69;
+  border-radius: 2rem;
+  padding: 1px 2.4rem;
+  font-size: 2rem;
+  line-height: 3.4rem;
+  letter-spacing: 0.1rem;
+  position: absolute;
+  top: 1.6rem;
+  right: 4.5rem;
+}
+
+.left {
+  animation: esq 3s;
+}
+
+.right {
+  animation: dir 3s;
+}
+
+@keyframes begin {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}  
+
+@keyframes giro {
+  0% {
+    transform: rotate(0);
+  }
+  
+  100% {
+    transform: rotate(360deg);
+  }
+} 
+
+@keyframes esq {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes dir {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (min-width: 700px) {
+  main {
+    margin: auto;
+    align-items: center;
+  }
+
+
+  .img-icecream img {
+    max-width: 25rem;
+  }
+
+  .grid {
+    grid-template-areas: "A C"
+    "B D";
+  }
+
+  .grid div:nth-child(1) {
+    grid-area: A;
+  }
+  
+  .grid div:nth-child(2) {
+    grid-area: B;
+  }
+
+  .grid div:nth-child(3) {
+    grid-area: C;
+  }
+
+  .grid div:nth-child(4) {
+    grid-area: D;
+  }
+}
+
+@media (min-width: 930px) {
+  main {
+    max-width: 100rem;
+  }
+}
